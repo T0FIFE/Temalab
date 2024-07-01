@@ -4,8 +4,6 @@ Témalaboratórum
 
 Horváth Kristóf 
 
-2023\.12.10 
-
 1. **Bevezetés** 
 
 Témának az érzelemfelismerést választottam. A projektet OpenCV és Keras tensorflow technológiák segítségével oldottam meg. Az OpenCV saját arc detektáló modelljét vettem alapul ('haarcascade\_frontalface.xml'), ami egy adott képen felismeri, hogy van-e arc és, ha igen hol helyezkedik el. Ez a modell az összes olyan képen lévő arcot érzékeli ami szembe néz a kamerával. 
