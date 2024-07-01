@@ -29,17 +29,17 @@ Az utolsó változtatás az adatkészleten egy konvertálás volt képekből sz�
 
 A neurális hálók alapköve a neuron. A neuron közvetíti az információt a háló rétegei között, ezt előre terjesztésnek hívjuk. A legelterjedtebb változata a memória nélküli neuron, ami egyenértékű bemenetekkel rendelkezik A továbbított értéket úgy kapjuk meg, hogy a neuronba kötött bemenetek értéket megszorozzuk a súlyukkal majd ezeket összeadjuk. Ezután a kapott eredményt általában egy nemlineáris függvény segítségével kiértékeljük, ami visszaad egy 0 és 1 közötti értéket amit a kimenetét küld tovább a neuron a további rétegek felé.  
 
-![](Aspose.Words.20817635-fb67-47fb-be17-265171e0e92e.001.png)[2] 
+![](img/001.png)[2] 
 
 A háló rétegei több ilyen neuronból állnak össze, amik a legegyszerűbb esetben kapcsolódnak az őket megelőző és őket követő réteghez. A neurális hálók rétegeinek fő csoportosítása három csoportot határoz meg. Az első a bemeneti réteg, ez jelképezi, fogadja azt az adatot, amit odaadunk a hálónak kiértékelésre. A középső rejtett réteg általában több réteget foglal magában, amik a háló céljától eltérően változnak. Az utolsó a kimeneti réteg, amin az eredményt vagy eredményeket kapjuk meg. 
 
-![](Aspose.Words.20817635-fb67-47fb-be17-265171e0e92e.002.png)
+![](img/002.png)
 
 [3] 
 
 ` `A Konvolúciós neurális háló amit itt is használunk két főbb részből áll. Az első rész a kép jellemzőit azonosítja és tanulja meg. A mi esetünkben ezek arcvonások. A második pedig egy osztályozó rész ami a kiszűrt tulajdonságok alapán kategorizálja a bemenetet. 
 
-![](Aspose.Words.20817635-fb67-47fb-be17-265171e0e92e.003.jpeg)[4] 
+![](img/003.jpeg)[4] 
 
 1. **Rétegek a hálóban** 
 
@@ -94,15 +94,15 @@ A háló a Keras python könyvtár segítségével készült el Rétegek:
 
 A neurális hálót két fő mérték alapján szokás mérni. Az első a pontosság (accuracy) ami az eltalált esetek száma osztva az összes esettel.[5] 
 
-![](Aspose.Words.20817635-fb67-47fb-be17-265171e0e92e.004.png)
+![](img/004.png)
 
 A másik pedig a veszteség (loss), itt categorical crossentropy típusú veszteséget használunk. 
 
 Ezeken kívül a hatékonyság vizualizálásához konfúziós mátrixot használunk. A modell által prediktált osztályokat összehasonlítja, és különböző értékekkel töltik ki a mátrix celláit.[6] 
 
-![](Aspose.Words.20817635-fb67-47fb-be17-265171e0e92e.005.png)
+![](img/005.png)
 
-![](Aspose.Words.20817635-fb67-47fb-be17-265171e0e92e.006.jpeg)[7] 
+![](img/006.jpeg)[7] 
 
 A mi esetünkben 6 sor és oszlop lesz. A sor és oszlopnevek a kategóriák nevei lesznek és minden, ami nem a főátlón van false értéknek fog számítani. 
 
@@ -131,7 +131,7 @@ Ennek a használatával nem kell foglalkoznunk az epoch number meghatározásáv
 |learning rate |0\.01 |
 |optimalizáló |Nadam |
 
-![](Aspose.Words.20817635-fb67-47fb-be17-265171e0e92e.007.jpeg)
+![](img/007.jpeg)
 
 Egy másik eszköz, amit használtam a ReduceLROnPlateau. Ezzel csökkenthető futás közben a learning rate. Ezt egy kis kísérletezés után úgy állítottam be, hogy ha a validációs pontosság nem javul 4 epoch után, akkor a learning rate 0.4-gyel redukálódik, amíg el nem éri a 0.0001 alsó határt. Ezáltal tovább finomítva a modell tanítását. 
 
@@ -151,7 +151,7 @@ Ezen beállítások mellett, az alábbi eredmények születtek.
 
 A végső program elég jól ismeri fel az érzelmeket képekről és videó folyamból. Legjobban a neutrális és boldog arckifejezéseket azonosítja a videók alapján. Szerintem overfitting jelentkezik és még lehetne javítani rajta. Alább néhány kép látható a programról: 
 
-![](Aspose.Words.20817635-fb67-47fb-be17-265171e0e92e.008.png)
+![](img/008.png)
 
 Források: 
 
